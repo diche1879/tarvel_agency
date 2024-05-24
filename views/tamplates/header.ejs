@@ -1,11 +1,13 @@
 <header>
     <h1>EJS's TRAVELS</h1>
     <nav id="menu">
-        <a href="/">🏠</a>
-        <a href="maldivas">Maldivas</a>
-        <a href="egipto">Egipto</a>
-        <a href="nuevayork">Nueva York</a>
-        <a href="venecia">Venecia</a>
-        <a href="vietnam">Vietnam</a>
+        <!-- por medio de la sintaxi de corchete y porcentaje sin el signo
+            de igual inserto codigo JS en el html para generar 
+            dinamicamente el  nav con los valores recuperado desde
+            el archivo Json .
+            Poniendo el igual hago que el contenido sea visible en el html-->
+        <% travels.forEach(travel=> { %>
+            <a href="/<%= travel.id %>"><%= travel.lugar %></a>
+        <% }); %>
     </nav>
 </header>
